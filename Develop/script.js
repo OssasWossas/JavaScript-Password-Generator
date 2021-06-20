@@ -25,27 +25,31 @@ function writePassword() {
   //Grabbing the other data, Uppercase, lowercase etc then confirming. Aswell as appending the relevant characters to a string
   upper = confirm('Would you like UpperCase Letters?');
   if (upper){
-    set += upper;
+    set += upperC;
     alert("You have chosen to have UpperCase Letters");
   }
+
   lower = confirm('Would you like LowerCase Letters?');
   if (lower){
     set += lowerC;
     alert("You have chosen to have LowerCase Letters");
   }
+
   special = confirm('Would you like Special Characters?');
   if (special){
     set += specialC;
     alert("You have chosen to have Special Characters");
   }
+
   numbers = confirm('Would you like numbers?');
   if (numbers){
     set += numberC;
     alert("You have chosen to have Numbers");
   }
   
+  // Error Catching if the user chooses for all to be null on the password Generator
   if( !upper && !lower && !special && !numbers ){
-    alert("ur brain damaged");
+    alert("You need to choose at least one type you potato");
     location.reload();
   }
 
