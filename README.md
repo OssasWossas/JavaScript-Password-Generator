@@ -1,11 +1,12 @@
 # JavaScript-Password-Generator
 
+As requested I have used the provided code and created a password Generator. If you look at the early commit you may see me trying to change the code to use checklists to generate the password but I hit a brick wall and pivoted to take the easy way out, which is What I present to you.
 
-![Website Preview](./Images/Generated-Password.png)
+![Website Preview](Develop/Images/Generated-Password.png)
 
 
 
-
+[Hosted Website](https://ossaswossas.github.io/JavaScript-Password-Generator/)
 
 
 
