@@ -1,38 +1,48 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+lowerC = 'abcdefghijklmnopqrstuvwqyz';
+upperC = lowerC.toUpperCase();
+numberC = "0123456789";
+specialC = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+array1 = [numberC, specialC, lowerC];
+var set = "";
+var Genpassword = "";
 
-var letters = "abcdefghijklmnopqrstuvwxyz";
-var upperL = letters.toLocaleUpperCase();
-var numbers = "0123456789";
-var special_characters = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
-var generateBtn = document.querySelector("#generate");
+console.log(set);
 // Write password to the #password input
 function writePassword() {
-  var UC = confirm("Would you like UpperCase Letters?");
-  var LC = confirm("Would you like LowerCase Letters?");
-  var N = confirm("Would you like Numbers?");
-  var special = confirm("Would you like Special Characters?");
-
-  if(!UC && !LC && !N && !special){
-    alert("Need to choose atleast one you bum");
-    console.log(UC + LC + N + special);
-  }
-  else{
-    return;
-  }
-
-  var length = parseInt(prompt("Enter the Length of Character in the password"));
-  if ((length >= 8) && (length <= 128)){
-    console.log("lur a spaz");
-  }
-  else{
-    alert("needs to be between 8 and 128")
-    var length = 0;
-  } 
   
-  console.log(length);
+  length = parseInt(prompt ('How long would you like the password to be?',  'Between 8 & 128'));
+  if((length < 8) || (length > 128) || "NaN"){
+    alert("Needs to be between 8 & 128 you potato");
+    location.reload();
+  }
+  upper = confirm('Would you like UpperCase Letters?');
+  if (upper){
+    set += upper;
+  }
+  lower = confirm('Would you like LowerCase Letters?');
+  if (lower){
+    set += lowerC;
+  }
+  special = confirm('Would you like Special Characters?');
+  if (special){
+    set += specialC;
+  }
+  numbers = confirm('Would you like numbers?');
+  if (numbers){
+    set += numberC;
+  }
+  
+  for (var i = 0; i < length; i++) {
+    Genpassword += set.charAt(Math.floor(Math.random() * set.length))
+  }
 
+  var passwordText = document.querySelector("#password");
+  passwordText.textContent = Genpassword;
 
+  console.log(Genpassword);
+  
 }
 
 // Add event listener to generate button
