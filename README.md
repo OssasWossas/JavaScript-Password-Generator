@@ -1,7 +1,7 @@
 # JavaScript-Password-Generator
 
 
-![Website Preview](.\Images\Generated Password.png)
+![Website Preview](./Images/Generated-Password.png)
 
 
 
